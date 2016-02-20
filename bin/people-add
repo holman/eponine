@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Adds people for `people-scan`.
+#
+# Usage:
+#   people-add <mac-address> <name>
+
+printf '%s\t%s\n' "$1" "$2" >> data/mac-addresses

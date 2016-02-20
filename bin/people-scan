@@ -1,7 +1,5 @@
 #!/bin/bash
 #
-# people
-#
 # Returns a list of people who are at the current location.
 #
 # This is handled by using `people-add` to add a username and MAC address

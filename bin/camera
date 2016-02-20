@@ -3,9 +3,10 @@
 # Takes a photo. Adds it to an archive.
 
 mkdir -p data/images
-file=data/images/$(date +"%Y-%m-%d-%T").jpg
+file=$(date +"%Y-%m-%d-%T").jpg
+path=data/images/$file
 url="http://$(cat data/hostname)"
 
-raspistill -o $file
+raspistill -o $path
 
 echo "$url/images/$file"

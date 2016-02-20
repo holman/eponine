@@ -38,7 +38,16 @@ func web(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, output)
 }
 
+func images(w http.ResponseWriter, r *http.Request) {
+	file := strings.TrimPrefix(r.RequestURI, "/images/")
+	file = strings.Trim(file, "/")
+
+	http.ServeFile(w, r, "data/images/"+file)
+}
+
 func main() {
+	http.HandleFunc("/images/", images)
 	http.HandleFunc("/", web)
+
 	http.ListenAndServe(":24601", nil)
 }

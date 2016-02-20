@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# people
+#
+# Returns a list of people who are at the current location.
+
+echo "people!"

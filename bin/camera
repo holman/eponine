@@ -2,7 +2,10 @@
 #
 # Takes a photo. Adds it to an archive.
 
-mkdir -p data/camera-archive
+mkdir -p data/images
+file=data/images/$(date +"%Y-%m-%d-%T").jpg
+url="http://$(cat data/hostname)"
 
-raspistill -o data/camera.jpg
-cp data/camera.jpg data/camera-archive/$(date +"%Y-%m-%d-%T").jpg
+raspistill -o $file
+
+echo "$url/images/$file"

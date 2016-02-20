@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Starts and stops eponine.
+
+# The path to the eponine directory
+path=/home/pi/apps/eponine
+
+case "$1" in
+  start)
+    ./$path/eponine
+    ;;
+  stop)
+    killall eponine
+    ;;
+  *)
+    echo "Usage:  {start|stop}"
+    exit 1
+    ;;
+esac
+exit $?

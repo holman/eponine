@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# people
+#
+# Returns a list of people who are at the current location.
+#
+# This is handled by using `people-add` to add a username and MAC address
+# pairing into `data/mac-addresses`.
+#
+# This depends on `arp-scan`; install with `sudo apt-get install arp-scan`. You
+# might want to `sudo chmod u+s /usr/bin/arp-scan` so you don't need to run it
+# with sudo.
+
+present_people=$(arp-scan --localnet | cut -f2 | tail -n +3 | head -n -2)
+found_people=()
+
+while read member; do
+  mac=$(echo "$member" | cut -f1)
+  name=$(echo "$member" | cut -f2)
+
+  while read -r present_person; do
+    if [ "$mac" == "$present_person" ]
+    then
+      found_people+=("$name")
+    fi
+  done <<< "$present_people"
+done <data/mac-addresses
+
+echo $found_people

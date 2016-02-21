@@ -24,4 +24,4 @@ while read member; do
   done <<< "$present_people"
 done <data/mac-addresses
 
-echo "People here: $found_people"
+./slackify "People here: $found_people"

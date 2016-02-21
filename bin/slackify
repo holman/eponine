@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Wraps simple text in a response formatted for Slack.
+#
+# Not safe yet if you use double quotes in your text but who cares, shell is
+# hard.
+
+cat <<EOF
+{
+  "response_type": "in_channel",
+  "text": "$1",
+}
+EOF

@@ -28,3 +28,9 @@ Eponine will run anything in your local `bin` directory. Clone the repo if you w
 
 [server]:  https://github.com/holman/eponine/blob/master/server.go
 [release]: https://github.com/holman/eponine/releases
+
+## Contributing
+
+Things are really raw right now; they'll maybe settle down eventually (or they won't and this will bitrot here forever).
+
+Slug through the source if you'd like; contributions sorta welcome.

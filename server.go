@@ -35,6 +35,7 @@ func web(w http.ResponseWriter, r *http.Request) {
 	file := strings.Trim(r.RequestURI, "/")
 	output := execCommand(file)
 	log.Println(r.RequestURI)
+	w.Header().Set("Content-Type", "application/json")
 
 	io.WriteString(w, output)
 }

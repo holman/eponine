@@ -8,6 +8,6 @@
 cat <<EOF
 {
   "response_type": "in_channel",
-  "text": "$1",
+  "text": "$1"
 }
 EOF

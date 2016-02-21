@@ -9,4 +9,6 @@ url="http://$(cat data/hostname)"
 
 raspistill -o $path
 
-echo "$url/images/$file"
+output="$url/images/$file"
+
+echo $(./bin/slackify "$output")

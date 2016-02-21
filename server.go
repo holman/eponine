@@ -34,6 +34,7 @@ func execCommand(cmd string) string {
 func web(w http.ResponseWriter, r *http.Request) {
 	file := strings.Trim(r.RequestURI, "/")
 	output := execCommand(file)
+	log.Println(r.RequestURI)
 
 	io.WriteString(w, output)
 }

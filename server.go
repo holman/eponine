@@ -28,7 +28,7 @@ func execCommand(cmd string) string {
 		log.Fatal(err)
 	}
 
-	return fmt.Sprintf("something: %s\n", out)
+	return string(out)
 }
 
 func web(w http.ResponseWriter, r *http.Request) {
